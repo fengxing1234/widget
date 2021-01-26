@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:widget/load_image_utils.dart';
+import 'package:widget/utils/load_image_utils.dart';
 
 typedef ExpansionCallback = void Function(bool isExpanded);
 

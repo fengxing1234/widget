@@ -1,3 +1,3 @@
 library widget;
-export 'load_image_utils.dart';
+export 'utils/load_image_utils.dart';
 export 'surver_expansion_view.dart';
