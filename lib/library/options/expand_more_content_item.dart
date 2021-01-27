@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:widget/base_content_item.dart';
-import 'package:widget/expand_more_model.dart';
+import 'package:widget/library/options/base_content_item.dart';
+import 'package:widget/library/options/expand_more_model.dart';
 
 typedef Future<String> ExpandTop(List<ExpandModel> list);
 
