@@ -140,7 +140,7 @@ class ExpandButtonItemState extends State<ExpandButtonItem>
 
   @override
   void didUpdateWidget(ExpandButtonItem oldWidget) {
-    /// 页面更新状态后调用
+    /// 组件更新状态后调用
     if(oldWidget.defaultIndex!=widget.defaultIndex){
       debugPrint('defaultIndex:${widget.defaultIndex}');
       if(widget.single){
@@ -163,28 +163,8 @@ class ExpandButtonItemState extends State<ExpandButtonItem>
         widget.models.removeAt(index);
         widget.models.insert(0, selectedList[0]);
       }
-
     }
     super.didUpdateWidget(oldWidget);
-    print('ExpandButtonItem 组件更新 didUpdateWidget');
-  }
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    print('ExpandButtonItem 依赖改变 didChangeDependencies');
-  }
-
-  @override
-  void reassemble() {
-    super.reassemble();
-    print('ExpandButtonItem 重新安装 reassemble');
-  }
-
-  @override
-  void deactivate() {
-    super.deactivate();
-    print('ExpandButtonItem 停用  deactivate');
   }
 
   @override

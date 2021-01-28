@@ -1,6 +1,7 @@
 import 'package:example/base_widget.dart';
 import 'package:example/button/custom_button_demo.dart';
 import 'package:example/loading/loading_widget_demo.dart';
+import 'package:example/options/options_demo.dart';
 import 'package:example/switch/switch_widget_demo.dart';
 import 'package:flutter/material.dart';
 
@@ -73,4 +74,6 @@ final routes = <String, WidgetBuilder>{
   '/switch':(_)=>BaseWidget('Switch示例', 'lib/switch/switch_widget_demo', SwitchWidgetDemo()),
 
   '/loading':(_)=>BaseWidget('Loading加载框示例', 'lib/loading/loading_widget_demo', LoadingWidgetDemo()),
+
+  '/optionsWidget':(_)=>BaseWidget('Expands示例', 'lib/options/options_demo', OptionsDemo()),
 };
