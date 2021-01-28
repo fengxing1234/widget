@@ -110,7 +110,6 @@ class _TextExpansionView extends State<SurveyExpansionView>
   _buildPanelTitle(){
     return Container(
       padding: widget.padding,
-      color: Color(0xFFFFFFFF),
       child: Column(
         children: [
           Container(
@@ -125,12 +124,12 @@ class _TextExpansionView extends State<SurveyExpansionView>
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    widget.title ?? SizedBox.shrink(),
+                    widget.subTitle ?? SizedBox.shrink(),
                     Padding(padding: EdgeInsets.only(left: 2)),
                     loadAssetImage(
                         _isOpen ? 'icon_bottom_new' : 'icon_top',
-                        width: 9,
-                        height: 9,
+                        width: 12,
+                        height: 12,
                         fit: BoxFit.cover),
                   ],
                 ),
@@ -147,7 +146,6 @@ class _TextExpansionView extends State<SurveyExpansionView>
   _buildPanelTitleShowText(){
     return Container(
       padding: widget.padding,
-      color: Color(0xFFFFFFFF),
       child: Column(
         children: <Widget>[
           Container(
@@ -171,8 +169,8 @@ class _TextExpansionView extends State<SurveyExpansionView>
                     Padding(padding: EdgeInsets.only(left: 2)),
                     loadAssetImage(
                         _isOpen ? 'icon_bottom_new' : 'icon_top',
-                        width: 9,
-                        height: 9,
+                        width: 12,
+                        height: 12,
                         fit: BoxFit.cover),
                   ],
                 ),
