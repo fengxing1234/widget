@@ -1,6 +1,7 @@
 import 'package:example/base_widget.dart';
 import 'package:example/button/custom_button_demo.dart';
 import 'package:example/expands/expands_widget_demo.dart';
+import 'package:example/date_picker/date_picker_demo.dart';
 import 'package:example/loading/loading_widget_demo.dart';
 import 'package:example/options/options_widget_demo.dart';
 import 'package:example/switch/switch_widget_demo.dart';
@@ -58,7 +59,7 @@ final routeLists = [
     'icon': 'assets/images/index-icon/icon_nav_feedback.png',
     'children': [
       {
-        'title': '日期选择控件',
+        'title': 'DatePicker',
         'url': '/datePicker'
       },
       {
@@ -83,4 +84,7 @@ final routes = <String, WidgetBuilder>{
   '/optionsWidget':(_)=>BaseWidget('Options示例', 'lib/options/options_widget_demo', OptionsWidgetDemo()),
 
   '/expandsWidget':(_)=>BaseWidget('Expands示例', 'lib/expands/expands_widget_demo', ExpandsWidgetDemo()),
+  '/optionsWidget':(_)=>BaseWidget('Expands示例', 'lib/options/options_demo', OptionsDemo()),
+
+  '/datePicker':(_)=>BaseWidget('日期选择控件示例', 'lib/date_picker/date_picker_demo', DatePickerDemo()),
 };
