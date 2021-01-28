@@ -84,7 +84,6 @@ final routes = <String, WidgetBuilder>{
   '/optionsWidget':(_)=>BaseWidget('Options示例', 'lib/options/options_widget_demo', OptionsWidgetDemo()),
 
   '/expandsWidget':(_)=>BaseWidget('Expands示例', 'lib/expands/expands_widget_demo', ExpandsWidgetDemo()),
-  '/optionsWidget':(_)=>BaseWidget('Expands示例', 'lib/options/options_demo', OptionsDemo()),
 
   '/datePicker':(_)=>BaseWidget('日期选择控件示例', 'lib/date_picker/date_picker_demo', DatePickerDemo()),
 };
