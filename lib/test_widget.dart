@@ -11,7 +11,7 @@ class TestWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('测试页面'),
+        title: Text('基础Widget模块'),
       ),
       body: TestWidgetContent(),
     );
@@ -28,7 +28,7 @@ class _TestWidgetContent extends State<TestWidgetContent> {
   Widget build(BuildContext context) {
     return Container(
       child: Center(
-        child: Text('测试'),
+        child: Text('基础Widget'),
       ),
     );
   }
