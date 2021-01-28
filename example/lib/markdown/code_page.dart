@@ -54,6 +54,8 @@ class _CodePageState extends State<CodePage> {
         title: Text('示例代码',style: TextStyle(
           color: Colors.black87
         ),),
+        elevation: 0,
+        centerTitle: true,
         backgroundColor: Color(0xfff8f8f8),
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios),
