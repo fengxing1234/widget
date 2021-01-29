@@ -3,12 +3,12 @@ import 'package:example/layout/title_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:widget/widget.dart';
 
-class OptionsDemo extends StatefulWidget{
+class OptionsWidgetDemo extends StatefulWidget{
   @override
   _OptionsDemoState createState() => _OptionsDemoState();
 }
 
-class _OptionsDemoState extends State<OptionsDemo>{
+class _OptionsDemoState extends State<OptionsWidgetDemo>{
   static final List<Map> dataList = [
     {'name':'正南方', 'value': '100'},
     {'name':'正北方', 'value': '200'},
@@ -27,15 +27,33 @@ class _OptionsDemoState extends State<OptionsDemo>{
       child: Container(
         child: Column(
           children: [
-            TitleWidget('多选项组件'),
+            TitleWidget('支持多选的情况'),
             Padding(
               padding: EdgeInsets.all(15),
               child: ExpandMoreContentItem(
                 isFirstExpandTop: true,
                 isSetFirst: false,
                 isExpand: true,
-                /// 控制单选或者多选：single
                 single: false,
+                models: ExpandModelList.formJson(dataList).list,
+                expandTop: (list) {
+                  if (list.isEmpty) {
+                    return Future.value('');
+                  }
+                  print(list.map((a) => a.name + ' = ' + a.value));
+                  String sss = list[0].value;
+                  return Future.value(list[0].value);
+                },
+              ),
+            ),
+            Gaps.vGap10,
+            TitleWidget('支持单选的情况'),
+            Padding(
+              padding: EdgeInsets.all(15),
+              child: ExpandMoreContentItem(
+                isFirstExpandTop: true,
+                isSetFirst: false,
+                isExpand: true,
                 models: ExpandModelList.formJson(dataList).list,
                 expandTop: (list) {
                   if (list.isEmpty) {
