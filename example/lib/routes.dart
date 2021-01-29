@@ -4,6 +4,7 @@ import 'package:example/loading/loading_widget_demo.dart';
 import 'package:example/options/options_demo.dart';
 import 'package:example/switch/switch_widget_demo.dart';
 import 'package:flutter/material.dart';
+import 'package:example/edit/custom_edit_view_demo.dart';
 
 final routeLists = [
   {
@@ -76,4 +77,7 @@ final routes = <String, WidgetBuilder>{
   '/loading':(_)=>BaseWidget('Loading加载框示例', 'lib/loading/loading_widget_demo', LoadingWidgetDemo()),
 
   '/optionsWidget':(_)=>BaseWidget('Expands示例', 'lib/options/options_demo', OptionsDemo()),
+
+  '/input':(_)=>BaseWidget('Edit示例', 'lib/edit/custom_edit_view_demo', CustomEditViewDemo()),
+
 };
