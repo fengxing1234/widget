@@ -2,12 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class BaseEditView extends StatefulWidget {
+class CustomEditView extends StatefulWidget {
   ///标题 文字 例如 领款人性质
   final String titleName;
 
   ///默认文字
   final String hint;
+
+  final String editText;
 
   ///文本控制器
   final TextEditingController controllerValue;
@@ -54,38 +56,55 @@ class BaseEditView extends StatefulWidget {
   ///回调函数 回调选择结果
   final Function onSelect;
 
+  ///光标宽度
   final cursorWidth;
 
-  const BaseEditView(
+  ///标题距输入框的边距
+  final double titlePadding;
+
+  const CustomEditView(
       {Key key,
       this.titleName,
       this.hint,
       this.controllerValue,
       this.enabled,
-      this.isNum,
-      this.toUp,
-      this.isOnlyNum,
-      this.isNoLetter,
+      this.isNum = false,
+      this.toUp = false,
+      this.isOnlyNum = false,
+      this.isNoLetter = false,
       this.length,
       this.focusNode,
-      this.isLayer,
-      this.numberLetter,
+      this.isLayer = false,
+      this.numberLetter = false,
       this.titleNameStyle,
       this.onSelect,
       this.editTextStyle,
       this.cursorWidth,
       this.maxLines,
       this.hintTextStyle,
-      this.decoration})
+      this.decoration,
+      this.editText,
+      this.titlePadding = 10})
       : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
-    return _BaseEditView();
+    return _CustomEditView();
   }
 }
 
-class _BaseEditView extends State<BaseEditView> {
+class _CustomEditView extends State<CustomEditView> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    if (widget.controllerValue != null && widget.editText != null) {
+      setState(() {
+        widget.controllerValue.text = widget.editText;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return _buildEditWidget();
@@ -100,6 +119,7 @@ class _BaseEditView extends State<BaseEditView> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               widget.titleName == null ? Container() : _buildSubTitleItem(),
+              Padding(padding: EdgeInsets.only(top: widget.titlePadding)),
               _buildInputText()
             ],
           ),
@@ -120,6 +140,7 @@ class _BaseEditView extends State<BaseEditView> {
 
   _buildSubTitleItem() {
     return
+
         ///标题
         RichText(
       text: TextSpan(children: [
